@@ -36,7 +36,16 @@ class RequestParams {
             'map' => 'insertOne'
           ),
           'select_one' => array(
-            'map' => 'selectOne'
+            'map' => 'selectOne',
+            'validations' => array(
+              'id' => array(
+                'on_request' => true,
+                'origin' => '_GET',
+                'pre_format' => 'trim',
+                'output_format' => 'trim',
+                'rules' => 'required|integer'
+              )
+            )
           ),
           'update_one' => array(
             'map' => 'updateOne'
