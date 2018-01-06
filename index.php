@@ -21,20 +21,18 @@ class Loader {
   }
 }
 
-class MyClass {
+class MyClass extends Loader {
 
-  function __construct(Loader $loader) {
-    $this->controller = $loader;
-  }
+  function __construct() { }
 
   function withString() {
-    $this->controller->handler('Component', function ($Component) {
+    $this->handler('Component', function ($Component) {
       var_dump($Component);
     });
   }
 
   function withArray() {
-    $this->controller->handler(['Component', 'AnotherComponent'], function ($Components) {
+    $this->handler(['Component', 'AnotherComponent'], function ($Components) {
       var_dump($Components['AnotherComponent']);
       var_dump($Components['Component']);
     });
