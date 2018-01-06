@@ -39,7 +39,7 @@ class MyClass extends Loader {
   }
 }
 
-$MyClass = new MyClass(new Loader());
+$MyClass = new MyClass();
 $MyClass->withString();
 echo PHP_EOL;
 $MyClass->withArray();
